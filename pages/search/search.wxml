@@ -1,0 +1,31 @@
+<!--pages/search/search.wxml-->
+  <view class='page_row'>
+    <view class='search_wrap'>
+        <view class="search">
+          <view class="df search_arr">
+            <icon class="searchcion" size='20' type='search'></icon>
+            <input class=""  placeholder="请输入关键字" value="{{searchValue}}"/>
+          </view>
+        </view>
+        <view class='sousuo' bindtap="suo">搜索</view>
+    </view>
+    <view>
+        <view class="search_no" wx:if="{{!centent_Show}}">
+          <text>很抱歉,没有找到您要搜索的资料/(ㄒoㄒ)/~~</text>
+        </view>
+    </view>
+     <view style="padding:0rpx">
+      <!--垂直滚动，这里必须设置高度-->
+        <scroll-view scroll-top="{{scrollTop}}" scroll-y="true" style="height:{{scrollHeight}}px;" 
+            class="list" bindscrolltolower="bindDownLoad" bindscrolltoupper="topLoad"  bindscroll="scroll">
+            <view class="item" wx:for="{{list}}">
+                <image class="img" src="{{item.pic_url}}"></image>
+            </view>
+        </scroll-view>
+        <view class="body-view">
+            <loading hidden="{{hidden}}" bindchange="loadingChange">
+                加载中...
+          </loading>
+        </view>
+    </view>
+  </view>

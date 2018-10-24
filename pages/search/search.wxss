@@ -1,0 +1,108 @@
+/* pages/search/search.wxss */
+.search_wrap{
+  display: flex;
+  flex-direction: row;
+  padding-bottom: 10rpx;
+  position: fixed;
+  top:0;
+  z-index:10;
+  background-color:#fff;
+  width:100%;
+}
+.search{
+  width: 80%;
+}
+.search_arr {
+  border: 1px solid #d0d0d0;
+  border-radius: 10rpx;
+  margin-left: 20rpx;
+}
+.search_arr input{
+  margin-left: 60rpx;
+  height: 60rpx;
+  border-radius: 5px;
+}
+.bc_text {
+  line-height: 68rpx;
+  height: 68rpx;
+  margin-top: 34rpx;
+}
+ 
+.sousuo {
+  margin-left: 15rpx;
+  width: 15%;
+  line-height: 150%;
+  text-align: center;
+  border: 1px solid #d0d0d0;
+  border-radius: 10rpx;
+}
+
+.search_no{
+  display: none;
+}
+.page_row{
+ 
+}
+.searchcion {
+  margin: 10rpx 10rpx 10rpx 10rpx;
+  position: absolute;
+  left:25rpx;
+  z-index: 2;
+  width: 20px;
+  height: 20px;
+  text-align: center;
+}
+/**index.wxss**/
+
+.userinfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.userinfo-avatar {
+  width: 128rpx;
+  height: 128rpx;
+  margin: 20rpx;
+  border-radius: 50%;
+}
+
+.userinfo-nickname {
+  color: #aaa;
+}
+
+.usermotto {
+  margin-top: 200px;
+}
+
+/**/
+
+scroll-view {
+  width: 100%;
+  padding-top: 80rpx;
+}
+
+.item {
+  width: 90%;
+  height: 300rpx;
+  margin: 20rpx auto;
+  background: brown;
+  overflow: hidden;
+}
+
+.item .img {
+  width: 430rpx;
+  margin-right: 20rpx;
+  float: left;
+}
+
+.title {
+  font-size: 30rpx;
+  display: block;
+  margin: 30rpx auto;
+}
+
+.description {
+  font-size: 26rpx;
+  line-height: 15rpx;
+}
