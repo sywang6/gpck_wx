@@ -13,6 +13,6 @@
     </view>
     <view>
         <view class='startDraw' bindtap='skipDraw'>开始绘画</view>
-        <view class='startDraw' bindtap='aboutUs'>关于我们</view>
+        <view class='startDraw' bindtap='aboutUs'>关于我们信息</view>
     </view>
 </view>
