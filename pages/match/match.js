@@ -13,7 +13,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-      console.log(options)
+    console.log(options)
   },
 
   /**
@@ -64,16 +64,16 @@ Page({
   onShareAppMessage: function () {
 
   },
-  reDraw:function(){
+  reDraw: function () {
     var pages = getCurrentPages(); //当前页面
     var beforePage = pages[pages.length - 2]; //前一个页面
     wx.navigateBack({
-      success:function(){
+      success: function () {
         beforePage.onLoad(); //执行前一个页面的onload方法
       }
     })
   },
-  keyWord:function(){
+  keyWord: function () {
     wx.switchTab({
       url: '../search/search'
     })

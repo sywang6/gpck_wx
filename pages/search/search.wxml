@@ -4,22 +4,29 @@
         <view class="search">
           <view class="df search_arr">
             <icon class="searchcion" size='20' type='search'></icon>
-            <input class=""  placeholder="请输入关键字" value="{{searchValue}}"/>
+            <input class="" type="text" placeholder="请输入关键字" value="{{searchValue}}" bindinput="searchValueInput"/>
           </view>
         </view>
-        <view class='sousuo' bindtap="suo">搜索</view>
+        <view class='sousuo'  bindtap="suo">搜索</view>
     </view>
     <view>
-        <view class="search_no" wx:if="{{!centent_Show}}">
+        <view class="search_no tip" wx:if="{{!centent_Show}}">
           <text>很抱歉,没有找到您要搜索的资料/(ㄒoㄒ)/~~</text>
         </view>
     </view>
-     <view style="padding:0rpx">
+    <view>
+        <view class="tip" wx:if="{{centent}}">
+          <text>请输入关键字/(ㄒoㄒ)/~~</text> 
+        </view>
+    </view>
+     <view style="padding:0rpx"  wx:if="{{cententInner}}">
       <!--垂直滚动，这里必须设置高度-->
         <scroll-view scroll-top="{{scrollTop}}" scroll-y="true" style="height:{{scrollHeight}}px;" 
             class="list" bindscrolltolower="bindDownLoad" bindscrolltoupper="topLoad"  bindscroll="scroll">
             <view class="item" wx:for="{{list}}">
-                <image class="img" src="{{item.pic_url}}"></image>
+                <navigator url='../cardinfo/cardinfo'>
+                    <image class="img" src="{{item.pic_url}}"></image>
+                </navigator>
             </view>
         </scroll-view>
         <view class="body-view">
@@ -28,4 +35,9 @@
           </loading>
         </view>
     </view>
+
+    <image src='http://13.209.72.50:8080/gpcka/images/baijin.png'></image>
+       
+    <view bindtap='bindcard'>跳转办卡</view>
+    
   </view>

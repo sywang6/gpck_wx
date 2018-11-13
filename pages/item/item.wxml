@@ -1,10 +1,14 @@
 <!--pages/item/item.wxml-->
-<view class="page">
-    <view wx:for="{{cards}}" wx:key="id">
-      <text>{{item.name}}</text>
+<view class="page weui-panel">
+    <view wx:for-items="{{cards}}" wx:key="id">
       <view>
-        <image src='{{item.src}}'></image>
+           <view  bindtap='toggleBtn' id='{{item.id}}' class='{{uhide==item.id?"opa1":(uhide==0?"opa0":"opa2")}}' >
+            <image class='image' src='{{item.src}}'></image>
+          </view>
+          <view class='down clearfix {{uhide==item.id?"":"hidden"}}'>
+            <text class='name'>{{item.name}}</text>
+            <view class='detail'>{{item.detail}}</view>
+          </view>
       </view>
-      <text>{{item.detail}}</text>
     </view>
 </view>

@@ -93,11 +93,11 @@ Page({
     arrx = [];
     arry = [];
     arrz = [];
-    if(context){
+    if (context) {
       context.clearRect(0, 0, canvasw, canvash);
       context.draw(true);
     }
-    
+
   },
   //提交签名内容
   setSign: function () {
@@ -117,8 +117,8 @@ Page({
       success: function (res) {
         console.log("canvas可以生成图片")
         console.log(res.tempFilePath, 'canvas图片地址');
-        that.setData({ canvasimgsrc: res.tempFilePath })
-        that.setData({ src: res.tempFilePath })
+        //that.setData({ canvasimgsrc: res.tempFilePath })
+        //that.setData({ src: res.tempFilePath })
         //code 比如上传操作   图片上传
         /**wx.request({
           url: 'test.php', //仅为示例，并非真实的接口地址
@@ -133,6 +133,11 @@ Page({
             console.log(res.data)
           }
         })**/
+        wx.navigateTo({
+          url: '../match/match?src=' + res.tempFilePath
+        })
+        console.log('跳转完成');
+
       },
       fail: function () {
         console.log("canvas不可以生成图片")
@@ -156,14 +161,14 @@ Page({
             console.log(res.data) //返回图片像素数据
             //console.log(res.data instanceof Uint8ClampedArray) // true
             console.log(res.data.length) // 100 * 100 * 4
-            
+
             //图片转换为base64格式
             let arrayBuffer = upng.encode([res.data.buffer], res.width, res.height)
             var imageBase64 = wx.arrayBufferToBase64(arrayBuffer);
             //console.log(imageBase64);
           }
         });
-     
+
       }
     });
 

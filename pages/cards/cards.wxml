@@ -1,23 +1,22 @@
 <view class="page">
-    <view class="page__bd">
-        <view class="weui-panel">
-            <view class="weui-panel__hd">交通银行信用卡分类百科</view>
-            <view class="weui-panel__bd">
-                <view class="weui-media-box weui-media-box_small-appmsg">
-                    <view class="weui-cells weui-cells_in-small-appmsg"  wx:for="{{cardList}}" wx:key="id">
-                        <navigator url="../item/item?id={{item.ID}}" class="weui-cell weui-cell_access"
-                                   hover-class="weui-cell_active">
-                            <view class="weui-cell__hd">
-                                <image src="/images/reg.png" style="width: 20px;height: 20px;margin-right: 5px"  />
-                            </view>
-                            <view class="weui-cell__bd weui-cell_primary">
-                                <text>{{item.type}}</text>
-                            </view>
-                            <view class="weui-cell__ft weui-cell__ft_in-access"></view>
-                        </navigator>
-                    </view>
-                </view>
-            </view>
+  <view class="page__bd">
+    <view class="weui-panel">
+      <view class="weui-panel__bd content">
+        <view class="weui-panel__hd title">交通银行信用卡分类百科</view>
+        <view class="weui-media-box weui-media-box_small-appmsg">
+          <view class="weui-cells weui-cells_in-small-appmsg" wx:for="{{cardList}}" wx:key="id">
+            <navigator url="../item/item?id={{item.ID}}" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
+              <view class="weui-cell__hd">
+                <image src="/images/reg.png" style="width: 20px;height: 20px;margin-right: 5px" />
+              </view>
+              <view class="weui-cell__bd weui-cell_primary">
+                <text>{{item.type}}</text>
+              </view>
+              <view class="weui-cell__ft weui-cell__ft_in-access"></view>
+            </navigator>
+          </view>
         </view>
+      </view>
     </view>
+  </view>
 </view>

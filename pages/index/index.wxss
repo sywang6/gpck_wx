@@ -39,3 +39,12 @@ background-repeat: no-repeat;
 .startDraw{
   text-align: center;
 }
+.toast1{
+  display: block;
+}
+.toast2{
+  display: none;
+}
+.test1{
+  color: #999;
+}

@@ -7,13 +7,16 @@
     "pages/my/my",
     "pages/search/search",
     "pages/cards/cards",
-    "pages/item/item"
+    "pages/item/item",
+    "pages/cardinfo/cardinfo",
+    "pages/match/match",
+    "pages/bindcard/bindcard"
   ],
   "window": {
     "backgroundTextStyle": "light",
-    "navigationBarBackgroundColor": "#fff",
+    "navigationBarBackgroundColor": "#4a90e2",
     "navigationBarTitleText": "猜画小卡",
-    "navigationBarTextStyle": "black"
+    "navigationBarTextStyle": "#fff"
   },
   "tabBar": {
     "color": "#6e6d6b",

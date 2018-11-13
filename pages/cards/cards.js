@@ -5,7 +5,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    cardList : []
+    cardList: []
   },
 
   /**
@@ -14,44 +14,44 @@ Page({
   onLoad: function (options) {
     const _this = this;
     // 请求数据
-     /**wx.request({
-          url: 'test.php', //仅为示例，并非真实的接口地址
-          data: {
-            x: '',
-            y: ''
-          },
-          header: {
-            'content-type': 'application/json' // 默认值
-          },
-          success(res) {
-            console.log(res.data)
-          }
-        })**/
-        this.setData({
-          cardList: [
-            {
-              'type': '交通银行标准信用卡',
-              'id': '001'
-            },
-            {
-              'type': '交通银行Y-power信用卡',
-              'id': '002'
-            },
-            {
-              'type': '交通银行bilibili主题卡',
-              'id': '003'
-            },
-            {
-              'type': '交通银行高达主题信用卡',
-              'id': '004'
-            },
-            {
-              'type': '交通银行程序员主题信用卡',
-              'id': '005'
-            }
-          ]
-        })
-    
+    /**wx.request({
+         url: 'test.php', //仅为示例，并非真实的接口地址
+         data: {
+           x: '',
+           y: ''
+         },
+         header: {
+           'content-type': 'application/json' // 默认值
+         },
+         success(res) {
+           console.log(res.data)
+         }
+       })**/
+    this.setData({
+      cardList: [
+        {
+          'type': '交通银行标准信用卡',
+          'id': '001'
+        },
+        {
+          'type': '交通银行Y-power信用卡',
+          'id': '002'
+        },
+        {
+          'type': '交通银行bilibili主题卡',
+          'id': '003'
+        },
+        {
+          'type': '交通银行高达主题信用卡',
+          'id': '004'
+        },
+        {
+          'type': '交通银行程序员主题信用卡',
+          'id': '005'
+        }
+      ]
+    })
+
   },
 
   /**

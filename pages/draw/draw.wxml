@@ -1,11 +1,16 @@
 <!--pages/shouxieban/shouxieban.wxml-->
-<view class="container">
-  <view>画板</view>
-  <canvas style="width: {{canvasw}}px; height: {{canvash}}px" class="canvas" id="canvas" canvas-id="canvas" disable-scroll="true" bindtouchstart="canvasStart" bindtouchmove="canvasMove" bindtouchend="canvasEnd" touchcancel="canvasEnd" binderror="canvasIdErrorCallback"></canvas>
-  <view class='btns canvaspd'>
-    <button bindtap="cleardraw">清除画板</button>
-    <button bindtap="setSign">确定</button>
+<view class='page'>
+  <view class="container">
+    <view>来来来，画出你心仪的卡片图案</view>
+    <view>
+      <canvas style="width: {{canvasw}}px; height: {{canvash}}px" class="canvas canvasWrap" id="canvas" canvas-id="canvas" disable-scroll="true" bindtouchstart="canvasStart" bindtouchmove="canvasMove" bindtouchend="canvasEnd" touchcancel="canvasEnd" binderror="canvasIdErrorCallback"></canvas>
+    </view>
+    
+    <view class='btns canvaspd'>
+      <button bindtap="cleardraw">清除画板</button>
+      <button bindtap="setSign">提交</button>
+    </view>
+    <!--<image src='{{canvasimgsrc}}'></image> -->
   </view>
-  <image src='{{canvasimgsrc}}'></image> 
 </view>
 

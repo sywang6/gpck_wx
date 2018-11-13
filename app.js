@@ -39,6 +39,6 @@ App({
   globalData: {
     userInfo: null,
     openid: '',
-    urlPath:'',
+    urlPath: '',
   }
 }) 

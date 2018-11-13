@@ -1,14 +1,19 @@
 /* pages/shouxieban/shouxieban.wxss */
 /*手写板  */
 page{
-  background: #f6f6f6;
-  padding: 5px auto
+  background: #fff;
 }
 .container{
   padding:0;
 }
+.canvasWrap{
+  border:1rpx solid #d1d1d1;
+  box-shadow:0rpx 2rpx 5rpx 5rpx #d1d1d1;
+}
 canvas{
-  border: 1px solid #d0d0d0;
   margin: 5rpx;
-  background: #f2f2f2
+  background: #fff;
+}
+button{
+  display: inline-block;
 }
