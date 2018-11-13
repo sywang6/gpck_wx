@@ -1,0 +1,2 @@
+<!--pages/bindcard/bindcard.wxml-->
+<web-view src="https://paymenttest.bankcomm.com"></web-view>

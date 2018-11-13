@@ -1,0 +1,9 @@
+<view class="page">
+    <view wx:for="{{cards}}" wx:key="id">
+      <text class='name'>{{item.name}}</text>
+      <view>
+        <image class='image' src='{{item.src}}'></image>
+      </view>
+      <text class='detail'>{{item.detail}}</text>
+    </view>
+</view>
