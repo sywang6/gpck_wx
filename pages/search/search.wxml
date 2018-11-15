@@ -1,43 +1,50 @@
 <!--pages/search/search.wxml-->
-  <view class='page_row'>
-    <view class='search_wrap'>
-        <view class="search">
-          <view class="df search_arr">
-            <icon class="searchcion" size='20' type='search'></icon>
-            <input class="" type="text" placeholder="请输入关键字" value="{{searchValue}}" bindinput="searchValueInput"/>
-          </view>
-        </view>
-        <view class='sousuo'  bindtap="suo">搜索</view>
+<import src="../template/template.wxml" />
+<view class='page_row'>
+  <view class='search_wrap'>
+    <view class="search">
+      <view class="df search_arr">
+        <icon class="searchcion" size='20' type='search'></icon>
+        <input class="" type="text" placeholder="请输入关键字" value="{{searchValue}}" bindinput="searchValueInput" />
+      </view>
     </view>
-    <view>
-        <view class="search_no tip" wx:if="{{!centent_Show}}">
-          <text>很抱歉,没有找到您要搜索的资料/(ㄒoㄒ)/~~</text>
-        </view>
-    </view>
-    <view>
-        <view class="tip" wx:if="{{centent}}">
-          <text>请输入关键字/(ㄒoㄒ)/~~</text> 
-        </view>
-    </view>
-     <view style="padding:0rpx"  wx:if="{{cententInner}}">
-      <!--垂直滚动，这里必须设置高度-->
-        <scroll-view scroll-top="{{scrollTop}}" scroll-y="true" style="height:{{scrollHeight}}px;" 
-            class="list" bindscrolltolower="bindDownLoad" bindscrolltoupper="topLoad"  bindscroll="scroll">
-            <view class="item" wx:for="{{list}}">
-                <navigator url='../cardinfo/cardinfo'>
-                    <image class="img" src="{{item.pic_url}}"></image>
-                </navigator>
-            </view>
-        </scroll-view>
-        <view class="body-view">
-            <loading hidden="{{hidden}}" bindchange="loadingChange">
-                加载中...
-          </loading>
-        </view>
-    </view>
-
-    <image src='http://13.209.72.50:8080/gpcka/images/baijin.png'></image>
-       
-    <view bindtap='bindcard'>跳转办卡</view>
-    
+    <view class='sousuo' bindtap="suo">搜索</view>
   </view>
+  <block>
+    <view class="tip" wx:if="{{centent_Show}}">
+      <text>很抱歉,没有找到您要搜索的资料/(ㄒoㄒ)/~~</text>
+    </view>
+  </block>
+  <block>
+    <view class="tip" wx:if="{{centent}}">
+      <text>请输入关键字/(ㄒoㄒ)/~~</text>
+    </view>
+  </block>
+   <block>
+    <view class="tip" wx:if="{{timeout}}">
+      <text>加载失败，请稍后重试/(ㄒoㄒ)/~~</text>
+    </view>
+  </block>
+  <view style="padding-top:80rpx" wx:if="{{cententInner}}">
+    <view class="page weui-panel">
+      <block wx:for="{{cardsInfo}}" wx:for-item="item" wx:index='{{idx}}' wx:for-index="bindex">
+        <template is='itemTmp' data='{{item,bindex:bindex,uhide:uhide,cardsInfo:cardsInfo}}'></template>
+        <!-- <view>
+          <view bindtap='toggleBtn' data-bindex='{{bindex +1}}' class='opa {{uhide==bindex + 1?"opa1":(uhide==0?"opa0":"opa2")}}'>
+            <image class='image' src='{{item.pic}}' binderror='imageError' data-img="cardsInfo[{{bindex}}].pic"></image>
+          </view>
+          <view data-bindex='{{bindex+1}}' class='down clearfix {{uhide==bindex+1?"":"hidden"}}'>
+            <view class='name'>{{item.ccname}}</view>
+            <text class='detail'>{{item.desc}}</text>
+          </view>
+        </view> -->
+      </block>
+    </view>
+    <view class="body-view">
+            <loading hidden="{{load}}" bindchange="loadingChange">
+                加载中...
+            </loading>
+        </view>
+  </view>
+  <!-- <view bindtap='bindcard'>跳转办卡</view> -->
+</view>

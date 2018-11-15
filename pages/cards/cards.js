@@ -30,76 +30,33 @@ Page({
     this.setData({
       cardList: [
         {
-          'type': '交通银行标准信用卡',
-          'id': '001'
+          'ccname': '交通银行标准信用卡',
+          'cctype': 'platiunm'
         },
         {
-          'type': '交通银行Y-power信用卡',
-          'id': '002'
+          'ccname': '交通银行Y-power信用卡',
+          'cctype': '002'
         },
         {
-          'type': '交通银行bilibili主题卡',
-          'id': '003'
+          'ccname': '交通银行bilibili主题卡',
+          'cctype': '003'
         },
         {
-          'type': '交通银行高达主题信用卡',
-          'id': '004'
+          'ccname': '交通银行高达主题信用卡',
+          'cctype': '004'
         },
         {
-          'type': '交通银行程序员主题信用卡',
-          'id': '005'
+          'ccname': '交通银行程序员主题信用卡',
+          'cctype': '005'
         }
       ]
     })
 
   },
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-
+  onPostType: function(event){
+    let cctype = event.currentTarget.dataset.type;
+    wx.navigateTo({
+      url: '../item/item?cctype=' + cctype 
+    })
   }
 })

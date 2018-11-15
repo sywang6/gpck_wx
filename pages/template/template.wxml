@@ -1,0 +1,12 @@
+<!--pages/template/template.wxml-->
+<template name='itemTmp'>
+  <view>
+    <view bindtap='toggleBtn' data-bindex='{{bindex +1}}' class='opa {{uhide==bindex + 1?"opa1":(uhide==0?"opa0":"opa2")}}'>
+      <image class='image' src='{{item.pic}}' binderror='imageError' data-img="cardsInfo[{{bindex}}].pic"></image>
+    </view>
+    <view data-bindex='{{bindex+1}}' class='down clearfix {{uhide==bindex+1?"":"hidden"}}'>
+      <view class='name'>{{item.ccname}}</view>
+      <text class='detail'>{{item.desc}}</text>
+    </view>
+  </view>
+</template>

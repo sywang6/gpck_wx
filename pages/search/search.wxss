@@ -1,5 +1,5 @@
 /* pages/search/search.wxss */
-
+@import"../template/template.wxss";
 .search_wrap {
   display: flex;
   flex-direction: row;

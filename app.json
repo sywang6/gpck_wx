@@ -4,13 +4,13 @@
     "pages/logs/logs",
     "pages/authorize/authorize",
     "pages/draw/draw",
-    "pages/my/my",
     "pages/search/search",
     "pages/cards/cards",
     "pages/item/item",
     "pages/cardinfo/cardinfo",
     "pages/match/match",
-    "pages/bindcard/bindcard"
+    "pages/bindcard/bindcard",
+    "pages/template/template"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -42,13 +42,10 @@
         "iconPath": "images/icon_me_line.png",
         "selectedIconPath": "images/icon_me_solid.png",
         "text": "分类百科"
-      },
-      {
-        "pagePath": "pages/my/my",
-        "iconPath": "images/icon_me_line.png",
-        "selectedIconPath": "images/icon_me_solid.png",
-        "text": "我的"
       }
     ]
+  },
+  "networkTimeout":{
+    "request":"20000"
   }
 }

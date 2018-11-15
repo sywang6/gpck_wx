@@ -1,0 +1,32 @@
+/* pages/template/template.wxss */
+.name{
+  color:#4a90e2;
+  font-size: 42rpx;
+}
+.detail{
+  font-size:17px;
+}
+.hidden{
+  display: none;
+}
+.opa{
+  padding-top: 25rpx;
+}
+.opa0{
+  opacity:1; 
+}
+.opa1{
+  opacity:1;
+}
+.opa2{
+  opacity:0.5;
+}
+.image{
+  width:690rpx;
+  height:439rpx;
+  display: block;
+  margin:0 auto;
+}
+.down{
+    padding:0px 15px;
+}
