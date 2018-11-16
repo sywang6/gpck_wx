@@ -16,13 +16,12 @@ Page({
     load: false,
     timeout: false
   },
-
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
     //这里要注意，微信的scroll-view必须要设置高度才能监听滚动事件，所以，需要在页面的onLoad事件中给scroll-view的高度赋值
-
+  
   },
   searchValueInput: function(e) {
     var value = e.detail.value;
@@ -60,9 +59,19 @@ Page({
         hidden: false
       });
       var str = that.data.searchValue;
+      // wx.request({
+      //   url: "http://13.209.72.50/gpcka/searchCcType",
+      //   dataType: "json",
+      //   method: 'get',
+      //   success(res) {
+      //     console.log(res);
+      //   }
+      // })
+
       wx.request({
-        url: "http://13.209.72.50/gpcka/search/" + str,
-        //url: "http://13.209.72.50/gpcka/searchByType/platinum",
+        //url: "http://13.209.72.50/gpcka/search/" + str,
+       // url: "http://13.209.72.50/gpcka/searchByType/platinum",
+        url: "http://13.209.72.50/gpcka/search/白金",
         dataType: "json",
         method: 'post',
         success: function(res) {
@@ -70,6 +79,7 @@ Page({
             load: true,
             hidden: true
           });
+          console.log(res);
           if (res.data.length > 0) {
             that.setData({
               cardsInfo: res.data,

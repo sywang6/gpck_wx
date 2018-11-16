@@ -12,46 +12,18 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    const _this = this;
+    var that = this;
     // 请求数据
-    /**wx.request({
-         url: 'test.php', //仅为示例，并非真实的接口地址
-         data: {
-           x: '',
-           y: ''
-         },
-         header: {
-           'content-type': 'application/json' // 默认值
-         },
-         success(res) {
-           console.log(res.data)
-         }
-       })**/
-    this.setData({
-      cardList: [
-        {
-          'ccname': '交通银行标准信用卡',
-          'cctype': 'platiunm'
-        },
-        {
-          'ccname': '交通银行Y-power信用卡',
-          'cctype': '002'
-        },
-        {
-          'ccname': '交通银行bilibili主题卡',
-          'cctype': '003'
-        },
-        {
-          'ccname': '交通银行高达主题信用卡',
-          'cctype': '004'
-        },
-        {
-          'ccname': '交通银行程序员主题信用卡',
-          'cctype': '005'
+    wx.request({
+        url: "http://13.209.72.50/gpcka/searchCcType",
+        dataType: "json",
+        method: 'get',
+        success(res) {
+          that.setData({
+            cardList: res.data
+          });
         }
-      ]
-    })
-
+       })
   },
   onPostType: function(event){
     let cctype = event.currentTarget.dataset.type;

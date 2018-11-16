@@ -1,82 +1,77 @@
 {
-  "description": "项目配置文件。",
-  "packOptions": {
-    "ignore": []
-  },
-  "setting": {
-    "urlCheck": false,
-    "es6": true,
-    "postcss": true,
-    "minified": true,
-    "newFeature": true
-  },
-  "compileType": "miniprogram",
-  "libVersion": "2.0.4",
-  "appid": "wx90c4831c9229c631",
-  "projectname": "wxChat",
-  "isGameTourist": false,
-  "condition": {
-    "search": {
-      "current": -1,
-      "list": []
-    },
-    "conversation": {
-      "current": -1,
-      "list": []
-    },
-    "plugin": {
-      "current": -1,
-      "list": []
-    },
-    "game": {
-      "currentL": -1,
-      "list": []
-    },
-    "miniprogram": {
-      "current": 6,
-      "list": [
-        {
-          "id": -1,
-          "name": "画板",
-          "pathName": "pages/class/class",
-          "query": ""
-        },
-        {
-          "id": 1,
-          "name": "画板测试",
-          "pathName": "pages/draw/draw",
-          "query": ""
-        },
-        {
-          "id": -1,
-          "name": "搜索",
-          "pathName": "pages/search/search",
-          "query": ""
-        },
-        {
-          "id": -1,
-          "name": "分类百科",
-          "pathName": "pages/cards/cards",
-          "query": ""
-        },
-        {
-          "id": 4,
-          "name": "卡列表信息",
-          "pathName": "pages/cardinfo/cardinfo",
-          "query": ""
-        },
-        {
-          "id": -1,
-          "name": "卡分类具体信息",
-          "pathName": "pages/item/item",
-          "query": ""
-        },
-        {
-          "id": -1,
-          "name": "推荐卡片",
-          "pathName": "pages/match/match"
-        }
-      ]
-    }
-  }
+	"description": "项目配置文件。",
+	"packOptions": {
+		"ignore": []
+	},
+	"setting": {
+		"urlCheck": false,
+		"es6": true,
+		"postcss": true,
+		"minified": true,
+		"newFeature": true
+	},
+	"compileType": "miniprogram",
+	"libVersion": "2.0.4",
+	"appid": "wx90c4831c9229c631",
+	"projectname": "wxChat",
+	"isGameTourist": false,
+	"condition": {
+		"search": {
+			"current": -1,
+			"list": []
+		},
+		"conversation": {
+			"current": -1,
+			"list": []
+		},
+		"plugin": {
+			"current": -1,
+			"list": []
+		},
+		"game": {
+			"currentL": -1,
+			"list": []
+		},
+		"miniprogram": {
+			"current": -1,
+			"list": [
+				{
+					"id": 1,
+					"name": "画板测试",
+					"pathName": "pages/draw/draw",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "搜索",
+					"pathName": "pages/search/search",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "分类百科",
+					"pathName": "pages/cards/cards",
+					"query": ""
+				},
+				{
+					"id": 4,
+					"name": "卡列表信息",
+					"pathName": "pages/cardinfo/cardinfo",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "卡分类具体信息",
+					"pathName": "pages/item/item",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "推荐卡片",
+					"pathName": "pages/match/match",
+					"query": ""
+				}
+			]
+		}
+	}
 }
