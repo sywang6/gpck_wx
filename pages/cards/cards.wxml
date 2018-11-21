@@ -7,7 +7,7 @@
           <view class="weui-cells weui-cells_in-small-appmsg" wx:for="{{cardList}}" wx:for-item="item" wx:index='{{idx}}'>
             <view catchtap='onPostType' data-type='{{item.cctype}}' class="weui-cell weui-cell_access" hover-class="weui-cell_active">
               <view class="weui-cell__hd">
-                <image src="/images/reg.png" style="width: 20px;height: 20px;margin-right: 5px" />
+                <image src="/images/card1.png" style="width: 20px;height: 20px;margin-right: 5px" />
               </view>
               <view class="weui-cell__bd weui-cell_primary">
                 <text>{{item.cctypename}}</text>

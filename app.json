@@ -33,14 +33,14 @@
       },
       {
         "pagePath": "pages/search/search",
-        "iconPath": "images/icon_me_line.png",
-        "selectedIconPath": "images/icon_me_solid.png",
+        "iconPath": "images/icon_search_line.png",
+        "selectedIconPath": "images/icon_search_solid.png",
         "text": "搜索"
       },
       {
         "pagePath": "pages/cards/cards",
-        "iconPath": "images/icon_me_line.png",
-        "selectedIconPath": "images/icon_me_solid.png",
+        "iconPath": "images/icon_kinds_line.png",
+        "selectedIconPath": "images/icon_kinds_solid.png",
         "text": "分类百科"
       }
     ]

@@ -21,8 +21,16 @@ Page({
     arrlx :[],
     arrly:[],
   },
-  onHide: function () {
-
+  scale: function (b) {
+    var len = b.length;
+    for (var i = 0;i < len; i++) {
+      if (b[i] instanceof Array) {
+        this.scale(b[i]);
+      } else {
+        b[i] /= 1.2;
+      }
+    }
+    return b;
   },
   //画布初始化执行
   startCanvas: function () {
@@ -65,6 +73,12 @@ Page({
   },
   canvasMove: function (event) {
     if (isButtonDown) {
+      if (event.changedTouches[0].x > 275 ||
+        event.changedTouches[0].x <0 ||
+        event.changedTouches[0].y<0 || event.changedTouches[0].y > 275) {
+          isButtonDown = false;
+          return;
+        }
       arrz.push(1);
       arrx.push(event.changedTouches[0].x);
       arry.push(event.changedTouches[0].y);
@@ -102,7 +116,6 @@ Page({
   //清除画布
   cleardraw: function () {
     var that = this;
-
     //清除画布
     arrE = [];
     arrPath = [];
@@ -121,7 +134,8 @@ Page({
   },
   //提交签名内容
   setSign: function () {
-    console.log(arrPath);
+    console.log(this.scale(arrPath));
+   // console.log(arrPath);
     var that = this;
     if (arrx.length == 0) {
       wx.showModal({
@@ -131,66 +145,6 @@ Page({
       });
       return false;
     };
-    //console.log("不是空的，canvas即将生成图片");
-    //生成图片
-    wx.canvasToTempFilePath({
-      canvasId: 'canvas',
-      success: function (res) {
-        //console.log("canvas可以生成图片")
-       // console.log(res.tempFilePath, 'canvas图片地址');
-        //that.setData({ canvasimgsrc: res.tempFilePath })
-        //that.setData({ src: res.tempFilePath })
-        //code 比如上传操作   图片上传
-        /**wx.request({
-          url: 'test.php', //仅为示例，并非真实的接口地址
-          data: {
-            x: '',
-            y: ''
-          },
-          header: {
-            'content-type': 'application/json' // 默认值
-          },
-          success(res) {
-            console.log(res.data)
-          }
-        })**/
-        // wx.navigateTo({
-        //   url: '../match/match?src=' + res.tempFilePath
-        // })
-      },
-      fail: function () {
-        console.log("canvas不可以生成图片")
-        wx.showModal({
-          title: '提示',
-          content: '微信当前版本不支持，请更新到最新版本！',
-          showCancel: false
-        });
-      },
-      complete: function () {
-        //canvas返回图片像素数据
-        wx.canvasGetImageData({
-          canvasId: 'canvas',
-          x: 0,
-          y: 0,
-          width: 100,
-          height: 100,
-          success(res) {
-            //console.log(res.width) // 100
-            //console.log(res.height) // 100
-            //console.log(res.data) //返回图片像素数据
-            //console.log(res.data instanceof Uint8ClampedArray) // true
-            //console.log(res.data.length) // 100 * 100 * 4
-
-            //图片转换为base64格式
-            let arrayBuffer = upng.encode([res.data.buffer], res.width, res.height)
-            var imageBase64 = wx.arrayBufferToBase64(arrayBuffer);
-            //console.log(imageBase64);
-          }
-        });
-
-      }
-    });
-
 
   },
   /**
@@ -200,6 +154,6 @@ Page({
     this.cleardraw();
     //画布初始化执行
     this.startCanvas();
+  },
 
-  }
-})
+}) 

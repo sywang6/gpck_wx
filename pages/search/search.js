@@ -23,6 +23,11 @@ Page({
     //这里要注意，微信的scroll-view必须要设置高度才能监听滚动事件，所以，需要在页面的onLoad事件中给scroll-view的高度赋值
   
   },
+  //UTF-8转UTF-16
+  change: function(str) {
+    //debugger
+    return encodeURI(str,"utf-8");
+  },
   searchValueInput: function(e) {
     var value = e.detail.value;
     this.setData({
@@ -59,19 +64,8 @@ Page({
         hidden: false
       });
       var str = that.data.searchValue;
-      // wx.request({
-      //   url: "http://13.209.72.50/gpcka/searchCcType",
-      //   dataType: "json",
-      //   method: 'get',
-      //   success(res) {
-      //     console.log(res);
-      //   }
-      // })
-
       wx.request({
-        //url: "http://13.209.72.50/gpcka/search/" + str,
-       // url: "http://13.209.72.50/gpcka/searchByType/platinum",
-        url: "http://13.209.72.50/gpcka/search/白金",
+       url: "http://13.209.72.50/gpcka/search/" + that.change(str),
         dataType: "json",
         method: 'post',
         success: function(res) {
@@ -79,7 +73,7 @@ Page({
             load: true,
             hidden: true
           });
-          console.log(res);
+          console.log(res.data);
           if (res.data.length > 0) {
             that.setData({
               cardsInfo: res.data,
@@ -131,10 +125,10 @@ Page({
   imageError: function(e) {
     var _errImg = e.target.dataset.img
     var _errObj = {}
-    _errObj[_errImg] = "http://13.209.72.50/gpcka/images/baijin.png"
+    _errObj[_errImg] = "../../images/timg.png"
     this.setData(_errObj) //注意这里的赋值方式,只是将数据列表中的此项图片路径值替换掉  
   },
-
+  
   bindcard: function() {
 
     wx.navigateTo({

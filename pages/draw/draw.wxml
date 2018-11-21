@@ -3,7 +3,7 @@
   <view class="container">
     <view>来来来，画出你心仪的卡片图案</view>
     <view>
-      <canvas style="width: {{canvasw-100}}px; height: {{canvash-100}}px" class="canvas canvasWrap" id="canvas" canvas-id="canvas" disable-scroll="true" bindtouchstart="canvasStart" bindtouchmove="canvasMove" bindtouchend="canvasEnd" touchcancel="canvasEnd" binderror="canvasIdErrorCallback"></canvas>
+      <canvas style="width: {{canvasw-100}}px; height: {{canvash-100}}px;" class="canvas canvasWrap" id="canvas" canvas-id="canvas" disable-scroll="true" bindtouchstart="canvasStart" bindtouchmove="canvasMove" bindtouchend="canvasEnd" touchcancel="canvasEnd" binderror="canvasIdErrorCallback"></canvas>
     </view>
     
     <view class='btns canvaspd'>

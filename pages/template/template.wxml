@@ -7,6 +7,7 @@
     <view data-bindex='{{bindex+1}}' class='down clearfix {{uhide==bindex+1?"":"hidden"}}'>
       <view class='name'>{{item.ccname}}</view>
       <text class='detail'>{{item.desc}}</text>
+      <view class='bindcard' bindtap='bindcard'>申请办卡</view>
     </view>
   </view>
 </template>

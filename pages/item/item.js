@@ -66,5 +66,12 @@ Page({
     _errObj[_errImg] = "http://13.209.72.50/gpcka/images/baijin.png"
     this.setData(_errObj) //注意这里的赋值方式,只是将数据列表中的此项图片路径值替换掉  
   },
+  bindcard: function () {
 
+    wx.navigateTo({
+
+      url: '../bindcard/bindcard'
+
+    })
+  },
 })

@@ -1,5 +1,5 @@
 <!--pages/search/search.wxml-->
-<import src="../template/template.wxml" />
+<import src="../template/template.wxml"/>
 <view class='page_row'>
   <view class='search_wrap'>
     <view class="search">
@@ -46,5 +46,5 @@
             </loading>
         </view>
   </view>
-  <!-- <view bindtap='bindcard'>跳转办卡</view> -->
+  <!-- <view bindtap='bindcard' style='margin-top:100rpx;'>跳转办卡</view>  -->
 </view>

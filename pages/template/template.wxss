@@ -30,3 +30,7 @@
 .down{
     padding:0px 15px;
 }
+.bindcard{
+  font-size:17px;
+  color:#4a90e2;
+}
