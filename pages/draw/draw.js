@@ -73,9 +73,9 @@ Page({
   },
   canvasMove: function (event) {
     if (isButtonDown) {
-      if (event.changedTouches[0].x > 275 ||
+      if (event.changedTouches[0].x > 255 ||
         event.changedTouches[0].x <0 ||
-        event.changedTouches[0].y<0 || event.changedTouches[0].y > 275) {
+        event.changedTouches[0].y<0 || event.changedTouches[0].y > 255) {
           isButtonDown = false;
           return;
         }
@@ -92,6 +92,7 @@ Page({
     };
     context.clearRect(0, 0, canvasw, canvash);
     context.setStrokeStyle('#000000');
+    context.scale(1.2,1.2);
     context.setLineWidth(4);
     context.setLineCap('round');
     context.setLineJoin('round');
@@ -134,8 +135,8 @@ Page({
   },
   //提交签名内容
   setSign: function () {
-    console.log(this.scale(arrPath));
-   // console.log(arrPath);
+   // console.log(this.scale(arrPath));
+   console.log(arrPath);
     var that = this;
     if (arrx.length == 0) {
       wx.showModal({
