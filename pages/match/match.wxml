@@ -7,7 +7,7 @@
         </view>
         <view class='right'>
           <image src='../../images/fly.png'></image>
-          <view wx:if="{{skip}}" class='reDraw' bindtap="reDraw">
+          <view wx:if="{{chanceFlag}}" class='reDraw' bindtap="reDraw">
             <image src='../../images/redraw.png'></image>
             <text>重绘</text>
           </view>
@@ -15,17 +15,18 @@
       </view>
     </block>
       <view class='tip'>
-         交通银行白金信用卡
+         {{ccname}}
       </view> 
       <view bindtap='bindcard'>
-        <image src='https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1540361832554&di=7d0d8ff4eff3f9743534505babfeaab8&imgtype=0&src=http%3A%2F%2Fimg.mp.sohu.com%2Fupload%2F20170704%2F0a4b78fc08924af1ad4226b96e73b696_th.png'></image> 
+        <image src='{{pic}}'></image> 
       </view>
       <block>
       <view class='search'>
         <view class='key' bindtap="keyWord">关键字选卡</view>
         <view class='last' bindtap="kinds">信用卡百科</view>
+        <button  class='last share'  open-type='share'>分享好友</button>
       </view>
-          <button open-type='share'>分享好友</button>
+          
       </block>
       
 </view>

@@ -14,6 +14,7 @@ Page({
   onLoad: function(options) {
     var that = this;
     var cctype = options.cctype;
+    console.log(cctype);
     // 拼接请求url
    var url = "http://13.209.72.50/gpcka/searchByType/" + cctype;
     wx.request({

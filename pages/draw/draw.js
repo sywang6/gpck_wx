@@ -146,7 +146,13 @@ Page({
       });
       return false;
     };
-
+     wx.setStorage({
+      key: "chanceFlag",
+      data: true
+    });
+    wx.navigateTo({
+      url: '../match/match'
+    })
   },
   /**
    * 生命周期函数--监听页面加载

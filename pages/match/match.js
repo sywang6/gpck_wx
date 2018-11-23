@@ -6,14 +6,31 @@ Page({
    * 页面的初始数据
    */
   data: {
-      skip:false
+    chanceFlag:true
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    console.log(options)
+    var that = this;
+    wx.getStorage({
+      key: 'recommendedCard',
+      success(res) {
+        that.setData({
+          pic:res.data.pic,
+          ccname:res.data.ccname
+        });
+      }
+    })
+    wx.getStorage({
+      key: 'chanceFlag',
+      success(res) {
+        that.setData({
+          chanceFlag: res.data
+        });
+      }
+    })
   },
   // 重画
   reDraw: function () {
@@ -25,7 +42,7 @@ Page({
       }
     })
   },
-  keyWord: function () {
+  keyWord: function (){
     wx.switchTab({
       url: '../search/search'
     })
@@ -40,20 +57,6 @@ Page({
       url: '../bindcard/bindcard'
     })
   },
-  //当页面隐藏时，跳转到指定页面
-  onHide: function () {
-    console.log(this.data.skip);
-    if (this.data.skip){
-      wx.reLaunch({
-        url: '../draw/draw'
-      })
-    }else{
-      wx.reLaunch({
-        url: '../index/index'
-      })
-    }
-  },
-
   /**
    * 用户点击右上角分享
    */
@@ -66,5 +69,8 @@ Page({
       title: '猜画小卡',
       path: '/page/index'
     }
+  },
+  onHide: function(e){
+    console.log(e);
   }
 })

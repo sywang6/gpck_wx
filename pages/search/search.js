@@ -50,6 +50,7 @@ Page({
   },
 
   suo: function(e) {
+    //debugger
     var that = this;
     that.setData({
       load: false

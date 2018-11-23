@@ -13,4 +13,6 @@
     <view class='startDraw' bindtap='skipDraw'>开始绘画</view>
     <view class='startDraw' bindtap='aboutUs'>关于我们</view>
   </view>
+  <image class='keySearch' data-key='车' bindtap='keySearch' src="../../images/car.png"></image>
+  <image class='keySearch' data-key='机器' bindtap='keySearch' src="../../images/rabbit.png"></image>
 </view>

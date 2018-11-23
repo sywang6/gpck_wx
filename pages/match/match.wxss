@@ -6,6 +6,8 @@ button{
   display: inline-block;
 }
 image{
+  width:690rpx;
+  height:439rpx;
   display: block;
   margin:0 auto;
 }
@@ -43,7 +45,9 @@ image{
   top:20rpx;
   left:80rpx;
 }
-.search view{
+.search view,.share{
+  font-size:unset;
+  display: block;
   width:450rpx;
   margin:0 auto;
   margin-top: 32rpx;
