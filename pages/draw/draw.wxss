@@ -9,6 +9,7 @@ page{
 .canvasWrap{
   border:1rpx solid #d1d1d1;
   box-shadow:0rpx 2rpx 5rpx 5rpx #d1d1d1;
+  border-radius: 20rpx;
 }
 canvas{
   margin: 5rpx;
@@ -16,4 +17,22 @@ canvas{
 }
 button{
   display: inline-block;
+}
+.tip1{
+  width:750rpx;
+  height:162rpx;
+  margin-bottom: 50rpx;
+}
+.btns{
+  margin-top:50rpx;
+}
+.btns image{
+  width:218rpx;
+  height:76rpx;
+}
+.cleardraw{
+  margin-right:25rpx;
+}
+.setSign{
+  margin-left:25rpx;
 }

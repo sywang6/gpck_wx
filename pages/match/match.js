@@ -17,6 +17,7 @@ Page({
     wx.getStorage({
       key: 'recommendedCard',
       success(res) {
+        console.log(res);
         that.setData({
           pic:res.data.pic,
           ccname:res.data.ccname
@@ -63,7 +64,7 @@ Page({
   onShareAppMessage: function (res){
     if (res.from === 'button') {
       // 来自页面内转发按钮
-      console.log(res.target)
+      //console.log(res.target)
     }
     return {
       title: '猜画小卡',
@@ -71,6 +72,5 @@ Page({
     }
   },
   onHide: function(e){
-    console.log(e);
   }
 })

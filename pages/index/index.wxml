@@ -1,18 +1,23 @@
 <view class="page">
-  <view class="page__hd i-header">
-    <view class="g-bd">
+  <view class='bg_box'>
+      <image src='../../images/index.png'></image>
+  </view>
+  <view class='content clearfix'>
+        <view class="page__hd i-header clearfix">
+    <view class="g-bd clearfix">
       <view class="g-bda">
         <view class="g-bda-userinfo">
           <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}"></image>
-          <view class="userinfo-nickname" style='margin-top:20rpx;margin-bottom:20rpx;color:red;'>{{userInfo.nickName}}</view>
+          <view class="userinfo-nickname">{{userInfo.nickName}}</view>
         </view>
       </view>
     </view>
   </view>
   <view>
-    <view class='startDraw' bindtap='skipDraw'>开始绘画</view>
-    <view class='startDraw' bindtap='aboutUs'>关于我们</view>
+    <view class='startDraw' bindtap='skipDraw'><image class='startImage' src="../../images/start.png"></image></view>
   </view>
-  <image class='keySearch' data-key='车' bindtap='keySearch' src="../../images/car.png"></image>
-  <image class='keySearch' data-key='机器' bindtap='keySearch' src="../../images/rabbit.png"></image>
+  <image class='keySearch car' data-key='车' bindtap='keySearch' src="../../images/car.png"></image>
+  <image class='keySearch rabbit' data-key='机器' bindtap='keySearch' src="../../images/rabbit.png"></image>
+  </view>
+
 </view>

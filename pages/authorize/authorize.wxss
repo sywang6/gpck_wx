@@ -28,3 +28,8 @@
     margin: 70rpx 50rpx;
     font-size: 35rpx;
 }
+.user{
+  background: #4a90e2;
+  color: #fff;
+  width:300rpx;
+}

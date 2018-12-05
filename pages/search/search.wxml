@@ -25,7 +25,7 @@
       <text>加载失败，请稍后重试/(ㄒoㄒ)/~~</text>
     </view>
   </block>
-  <view style="padding-top:80rpx" wx:if="{{cententInner}}">
+  <view style="padding-top:60rpx" wx:if="{{cententInner}}">
     <view class="page weui-panel">
       <block wx:for="{{cardsInfo}}" wx:for-item="item" wx:index='{{idx}}' wx:for-index="bindex">
         <template is='itemTmp' data='{{item,bindex:bindex,uhide:uhide,cardsInfo:cardsInfo}}'></template>
