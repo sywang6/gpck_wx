@@ -152,8 +152,11 @@ Page({
   setSign: function () {
     var that = this;
     //console.log(arrPath);
-    arrPath = that.encodeArray3D(arrPath);
-    //console.log(typeof arrPath);
+    if (typeof arrPath == 'string') {
+      arrPath = arrPath
+    }else{
+      arrPath = that.encodeArray3D(arrPath);
+    }
     if (arrx.length == 0) {
       wx.showModal({
         title: '提示',
@@ -162,26 +165,12 @@ Page({
       });
       return false;
     };
-    // wx.request({
-    //   url: "http://13.209.72.50/gpcka/searchImage",
-    //   method: 'POST',
-    //   data: {
-    //     "imageStr": arrPath
-    //   },
-    //   success:function(res){
-    //       console.log(res);
-    //   },
-    //   error:function(){
-    //     console.log('error');
-    //   }
-    // })
-
-    var key = '车';
-    var that = this;
     wx.request({
-      url: "http://13.209.72.50/gpcka/search/" + that.change(key),
-      dataType: "json",
-      method: 'post',
+      url: "http://13.209.72.50/gpcka/searchImage",
+      method: 'POST',
+      data: {
+        "imageStr": arrPath
+      },
       success: function (res) {
         if (res.data[0]) {
           wx.setStorage({
@@ -200,12 +189,38 @@ Page({
       fail: function () {
         console.log('error');
       }
-    });
+    })
 
-     wx.setStorage({
-      key: "chanceFlag",
-      data: true
-    });
+    // var key = '车';
+    // var that = this;
+    // wx.request({
+    //   url: "http://13.209.72.50/gpcka/search/" + that.change(key),
+    //   dataType: "json",
+    //   method: 'post',
+    //   success: function (res) {
+    //     if (res.data[0]) {
+    //       wx.setStorage({
+    //         key: "recommendedCard",
+    //         data: res.data[0]
+    //       });
+    //       wx.setStorage({
+    //         key: "chanceFlag",
+    //         data: true
+    //       });
+    //       wx.navigateTo({
+    //         url: '/pages/match/match'
+    //       });
+    //     }
+    //   },
+    //   fail: function () {
+    //     console.log('error');
+    //   }
+    // });
+
+    //  wx.setStorage({
+    //   key: "chanceFlag",
+    //   data: true
+    // });
     // wx.navigateTo({
     //   url: '../match/match'
     // })
